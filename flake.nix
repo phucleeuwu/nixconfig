@@ -33,28 +33,28 @@
   in
   {
     # --- NixOS Configuration ---
-    nixosConfigurations."${host-linux}" = nixpkgs.lib.nixosSystem {
-      system = linux;
-      modules = [
-        configuration
-        ./nixos/configuration.nix
-        home-manager.nixosModules.home-manager {
-          home-manager.users.${user-linux} = {
-            import = [
-              ./nixos/home.nix
-            ];
-          };
-        }
-        catppuccin.nixosModules.catppuccin
-        {
-          users.users.${user-linux} = {
-            home = "/home/${user-linux}";
-            isNormalUser = true;
-            extraGroups = [ "wheel" ]; # Give sudo access
-          };
-        }
-      ];
-    };
+    # nixosConfigurations."${host-linux}" = nixpkgs.lib.nixosSystem {
+    #   system = linux;
+    #   modules = [
+    #     configuration
+    #     ./nixos/configuration.nix
+    #     home-manager.nixosModules.home-manager {
+    #       home-manager.users.${user-linux} = {
+    #         import = [
+    #           ./nixos/home.nix
+    #         ];
+    #       };
+    #     }
+    #     catppuccin.nixosModules.catppuccin
+    #     {
+    #       users.users.${user-linux} = {
+    #         home = "/home/${user-linux}";
+    #         isNormalUser = true;
+    #         extraGroups = [ "wheel" ]; # Give sudo access
+    #       };
+    #     }
+    #   ];
+    # };
 
     # --- macOS Configuration ---
     darwinConfigurations."${host-darwin}" = nix-darwin.lib.darwinSystem {
