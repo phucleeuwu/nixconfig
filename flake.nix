@@ -13,9 +13,7 @@
 
   outputs = { self, nixpkgs, nix-darwin, home-manager, nix-homebrew, catppuccin, ... }:
   let
-    linux = "x86_64-linux";
     darwin = "aarch64-darwin";
-    user-linux = "phuc";
     user-darwin = "phuc";
     host-linux = "phuclees-Mac-mini";
     host-darwin = "Mac-mini-cua-phuclee"; # Change to your hostname (`scutil --get LocalHostName`)
