@@ -1,10 +1,6 @@
 _: {
   enable = true;
+  enableZshIntegration = true;
   enableFishIntegration = true;
   # enableNushellIntegration = true;
-  enableZshIntegration = true;
-  defaultOptions = [
-    "--height 40%"
-    "--border"
-  ];
 }

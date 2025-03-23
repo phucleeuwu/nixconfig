@@ -1,11 +1,9 @@
-_:
-
-{
+_: {
   enable = true;
   userSettings = {
     vim_mode = true;
     relative_line_numbers = true;
-    buffer_font_family = "Hack Nerd Font Mono";
+    buffer_font_family = "Maple Mono";
     ui_font_size = 16;
     buffer_font_size = 16;
     edit_predictions = {
@@ -27,7 +25,7 @@ _:
     };
     terminal = {
       dock = "bottom";
-      font_family = "Hack Nerd Font Mono";
+      font_family = "Maple Mono";
     };
   };
 

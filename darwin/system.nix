@@ -1,8 +1,4 @@
-_:
-
-{
-  programs.fish.enable = true;  #macOs default shell
-
+_: {
   system.defaults = {
     LaunchServices.LSQuarantine = false;
     controlcenter.BatteryShowPercentage = true;

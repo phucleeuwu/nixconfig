@@ -1,29 +1,12 @@
-{ ... }:
-
-{
-  home.stateVersion = "25.05"; # Don't change unless necessary.
-  xdg.enable = true;
-
+{pkgs, ...}: {
   imports = [
-    ../home/default.nix
-    # inputs.LazyVim.homeManagerModules.default
+    ../home.nix
   ];
-
-  # system wide catppuccin
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "mauve";
-  };
-
-  # enable or disable programs
-  starship.enable = true;
-  programs.git.delta.enable = true;
+  # macOs only packages
+  home.packages = [
+    pkgs.arc-browser
+    pkgs.raycast
+    pkgs.iina
+  ];
   aerospace.enable = true;
-  fish.enable = true;
-  ghostty.enable = false;
-
-  # programs.lazyvim = {
-  #   enable = true;
-  # };
 }
