@@ -1,1 +1,1 @@
-# A backup nixconfig from my [dotfiles](https://github.com/phucleeuwu/dotfiles/main/nix)
+# A backup nix configuration from my [dotfiles](https://github.com/phucleeuwu/dotfiles/tree/main/nix)
