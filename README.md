@@ -2,15 +2,15 @@
 
 ## 📌 Overview
 
-This is my personal Nix configuration, designed to be **modular** and **easy to manage** using Home Manager. It organizes configurations into categories and loads them dynamically.
+A modular and easy-to-manage Nix configuration using Home Manager. Configurations are categorized and loaded dynamically.
 
-### 📜 About a **New way** to use `Home-Manager`
+### 📜 A **Better Way** to Use Home Manager
 
-The [`default.nix`](./home/default.nix) file in [`./home/`](./home/) is a key component of my configuration, automatically importing all Home Manager modules to keep the setup clean and flexible. It:
+[`default.nix`](./home/default.nix) automatically imports all Home Manager modules, keeping the setup clean and flexible:
 
-- **Dynamically imports** all `.nix` files in [`./home/`](./home/), eliminating the need to list them manually.
-- **Supports modularity**, making it easy to manage different configurations for CLI, GUI, and shell programs.
-- **Simplifies enabling/disabling** programs in [`home.nix`](./home/home.nix).
+- **Auto-loads** all `.nix` files in [`./home/`](./home/), no manual imports needed.
+- **Modular** structure for managing CLI, GUI, and shell programs.
+- **Easy toggling** of programs in [`home.nix`](./home/home.nix).
 
 #### 🔍 How It Works
 
@@ -28,13 +28,13 @@ in {
 }
 ```
 
-This allows all `.nix` files inside [`./home/`](./home/) to be automatically loaded, reducing the need for manual imports.
+This loads all `.nix` files inside [`./home/`](./home/) automatically.
 
 ---
 
 ## 🛠️ Installation & Usage
 
-### Install Everything (Recommended: [`Determinate Nix`](https://github.com/DeterminateSystems/nix-installer#install-nix))
+### Install Everything ([`Determinate Nix`](https://github.com/DeterminateSystems/nix-installer#install-nix) recommended)
 
 > **Note:** Update your `username` and `hostname` in [`flake.nix`](./nix/flake.nix).
 
@@ -63,21 +63,9 @@ darwin-rebuild switch --flake ~/dotfiles/nix
 │   ├── 📄 system.nix
 │
 ├── 📁 home
-│   ├── 📁 cli
-│   │   ├── 📄 atuin.nix
-│   │   ├── 📄 bat.nix
-│   │   ├── 📄 carapace.nix
-│   │   ├── ... (more CLI configs)
-│   │
-│   ├── 📁 gui
-│   │   ├── 📄 aerospace.nix
-│   │   ├── 📄 ghostty.nix
-│   │   ├── ... (more GUI configs)
-│   │
-│   ├── 📁 shell
-│   │   ├── 📄 fish.nix
-│   │   ├── ... (more shell configs)
-│   │
+│   ├── 📁 cli (CLI programs)
+│   ├── 📁 gui (GUI applications)
+│   ├── 📁 shell (Shell environments)
 │   ├── 📄 aliases.nix
 │   ├── 📄 default.nix
 │   ├── 📄 env.nix
@@ -88,26 +76,23 @@ darwin-rebuild switch --flake ~/dotfiles/nix
 
 ## 🎛️ Customization
 
-### Enabling/Disabling Modules
-By default, all modules in [`./home/`](./home/) are enabled. To disable a specific module, set its `enable` option to `false` in [`home.nix`](./home/home.nix):
+### Enable/Disable Modules
+All modules in [`./home/`](./home/) are enabled by default. Disable a module in [`home.nix`](./home/home.nix):
 
 ```nix
-{
+  #example:
   neovim.enable = false;
-}
 ```
-
-This prevents Home Manager from installing unnecessary packages while keeping configurations neat.
 
 ---
 
 ## 🔥 Why This Setup?
 
-✅ **Modular** – Organizes configs into categories.
+✅ **Modular** – Organized by category.
 
-✅ **Dynamic** – Automatically loads `.nix` files from [`./home/`](./home/).
+✅ **Automatic** – Loads all `.nix` files from [`./home/`](./home/).
 
-✅ **Scalable** – Easy to expand and modify.
+✅ **Scalable** – Easy to modify and expand.
 
 ---
 
