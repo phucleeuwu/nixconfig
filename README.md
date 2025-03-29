@@ -28,7 +28,7 @@ This is my personal Nix configuration, designed to be **modular** and **easy to 
 
 ## 🛠️ Installation & Usage
 
-### Install Everything (Recommend [`Determinate Nix`](https://github.com/DeterminateSystems/nix-installer#install-nix))
+### Install Everything (Recommended: [`Determinate Nix`](https://github.com/DeterminateSystems/nix-installer#install-nix))
 
 > **Note:** Update your `username` and `hostname` in [`flake.nix`](./nix/flake.nix).
 
@@ -42,15 +42,17 @@ nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/dotfiles/nix
 darwin-rebuild switch --flake ~/dotfiles/nix
 ```
 
-> **Disabling Specific Nix Module**: set the corresponding module’s `enable` option to `false` in [`home.nix`](./nix/home.nix)
-
 ---
 
 ## ⚙️ Dynamic Configuration
 
-The `./home/default.nix` file automatically imports all Home Manager modules, keeping the setup clean and flexible.
+The [`default.nix`](./home/default.nix) file in [`./home/`](./home/) is a key component of my configuration, automatically importing all Home Manager modules to keep the setup clean and flexible. It:
 
-### 🔍 How It Works
+- **Dynamically imports** all `.nix` files in [`./home/`](./home/), eliminating the need to list them manually.
+- **Supports modularity**, making it easy to manage different configurations for CLI, GUI, and shell programs.
+- **Simplifies enabling/disabling** programs in [`home.nix`](./home/home.nix).
+
+#### 🔍 How It Works
 
 ```nix
 { config, pkgs, lib, ... }:
@@ -66,37 +68,22 @@ in {
 }
 ```
 
-This allows all `.nix` files inside `./home/` to be automatically loaded, reducing the need for manual imports.
-
----
-
-## 📜 About `default.nix`
-
-The `default.nix` file in `./home/` is a key component of my configuration. It:
-
-- **Dynamically imports** all `.nix` files in `./home/`, eliminating the need to list them manually.
-- **Supports modularity**, making it easy to manage different configurations for CLI, GUI, and shell programs.
-- **Simplifies enabling/disabling** programs in `home.nix`.
-
-Example:
-```nix
-{
-  aerospace.enable = false;
-  neovim.enable = false;
-}
-```
-This prevents Home Manager from installing unnecessary packages while keeping configurations neat.
+This allows all `.nix` files inside [`./home/`](./home/) to be automatically loaded, reducing the need for manual imports.
 
 ---
 
 ## 🎛️ Customization
 
-Disable programs in `home.nix`:
+### Enabling/Disabling Modules
+By default, all modules in [`./home/`](./home/) are enabled. To disable a specific module, set its `enable` option to `false` in [`home.nix`](./home/home.nix):
+
 ```nix
 {
   neovim.enable = false;
 }
 ```
+
+This prevents Home Manager from installing unnecessary packages while keeping configurations neat.
 
 ---
 
@@ -104,7 +91,7 @@ Disable programs in `home.nix`:
 
 ✅ **Modular** – Organizes configs into categories.
 
-✅ **Dynamic** – Automatically loads `.nix` files from `./home/`.
+✅ **Dynamic** – Automatically loads `.nix` files from [`./home/`](./home/).
 
 ✅ **Scalable** – Easy to expand and modify.
 
