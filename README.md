@@ -8,7 +8,7 @@ A modular and easy-to-manage Nix configuration using Home Manager. Configuration
 
 [`default.nix`](./home/default.nix) automatically imports all Home Manager modules, keeping the setup clean and flexible:
 
-- **Auto-loads** all `.nix` files in [`./home/`](./home/), no manual imports needed.
+- **Auto-loads** all `.nix` files in [`home/`](./home/), no manual imports needed.
 - **Modular** structure for managing CLI, GUI, and shell programs.
 - **Easy toggling** of programs in [`home.nix`](./home.nix).
 
@@ -28,7 +28,7 @@ in {
 }
 ```
 
-This loads all `.nix` files inside [`./home/`](./home/) automatically.
+This loads all `.nix` files inside [`home/`](./home/) automatically.
 
 ---
 
@@ -36,7 +36,7 @@ This loads all `.nix` files inside [`./home/`](./home/) automatically.
 
 ### Install Everything ([`Determinate Nix`](https://github.com/DeterminateSystems/nix-installer#install-nix) recommended)
 
-> **Note:** Update your `username` and `hostname` in [`flake.nix`](./nix/flake.nix).
+> **Note:** Update your `username` and `hostname` in [`flake.nix`](./flake.nix).
 
 ```bash
 nix run nix-darwin/master#darwin-rebuild -- switch --flake ~/dotfiles/nix
@@ -77,7 +77,7 @@ darwin-rebuild switch --flake ~/dotfiles/nix
 ## 🎛️ Customization
 
 ### Enable/Disable Modules
-All modules in [`./home/`](./home/) are enabled by default. Disable a module in [`home.nix`](./home.nix):
+All modules in [`home/`](./home/) are enabled by default. Disable a module in [`home.nix`](./home.nix):
 
 ```nix
 #example:
@@ -90,7 +90,7 @@ neovim.enable = false;
 
 ✅ **Modular** – Organized by category.
 
-✅ **Automatic** – Loads all `.nix` files from [`./home/`](./home/).
+✅ **Automatic** – Loads all `.nix` files from [`home/`](./home/).
 
 ✅ **Scalable** – Easy to modify and expand.
 
