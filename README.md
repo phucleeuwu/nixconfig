@@ -80,8 +80,8 @@ darwin-rebuild switch --flake ~/dotfiles/nix
 All modules in [`./home/`](./home/) are enabled by default. Disable a module in [`home.nix`](./home/home.nix):
 
 ```nix
-  #example:
-  neovim.enable = false;
+#example:
+neovim.enable = false;
 ```
 
 ---
