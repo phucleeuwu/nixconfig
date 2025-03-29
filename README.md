@@ -10,7 +10,7 @@ A modular and easy-to-manage Nix configuration using Home Manager. Configuration
 
 - **Auto-loads** all `.nix` files in [`./home/`](./home/), no manual imports needed.
 - **Modular** structure for managing CLI, GUI, and shell programs.
-- **Easy toggling** of programs in [`home.nix`](./home/home.nix).
+- **Easy toggling** of programs in [`home.nix`](./home.nix).
 
 #### 🔍 How It Works
 
@@ -77,7 +77,7 @@ darwin-rebuild switch --flake ~/dotfiles/nix
 ## 🎛️ Customization
 
 ### Enable/Disable Modules
-All modules in [`./home/`](./home/) are enabled by default. Disable a module in [`home.nix`](./home/home.nix):
+All modules in [`./home/`](./home/) are enabled by default. Disable a module in [`home.nix`](./home.nix):
 
 ```nix
 #example:
