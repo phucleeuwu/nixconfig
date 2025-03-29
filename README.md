@@ -10,18 +10,34 @@ This is my personal Nix configuration, designed to be **modular** and **easy to 
 
 ```
 📦 nix-config/
-├── 📁 programs
-│   ├── 📂 cli
-│   ├── 📂 gui
-│   ├── 📂 shell
+├── 📄 flake.nix
+├── 📄 home.nix
+├── 📄 stylix.nix
+├── 📁 darwin
+│   ├── 📄 configuration.nix
+│   ├── 📄 home.nix
+│   ├── 📄 system.nix
 │
-├── 📁 services
 ├── 📁 home
-│   ├── default.nix  # Dynamically loads all home modules
-│   ├── home.nix
-│   ├── packages.nix
-│   ├── env.nix
-│   ├── aliases.nix
+│   ├── 📁 cli
+│   │   ├── 📄 atuin.nix
+│   │   ├── 📄 bat.nix
+│   │   ├── 📄 carapace.nix
+│   │   ├── ... (more CLI configs)
+│   │
+│   ├── 📁 gui
+│   │   ├── 📄 aerospace.nix
+│   │   ├── 📄 ghostty.nix
+│   │   ├── ... (more GUI configs)
+│   │
+│   ├── 📁 shell
+│   │   ├── 📄 fish.nix
+│   │   ├── ... (more shell configs)
+│   │
+│   ├── 📄 aliases.nix
+│   ├── 📄 default.nix
+│   ├── 📄 env.nix
+│   ├── 📄 packages.nix
 ```
 
 ---
@@ -45,6 +61,8 @@ darwin-rebuild switch --flake ~/dotfiles/nix
 ---
 
 ## ⚙️ Dynamic Configuration
+
+### 📜 About [`default.nix`](./home/default.nix)
 
 The [`default.nix`](./home/default.nix) file in [`./home/`](./home/) is a key component of my configuration, automatically importing all Home Manager modules to keep the setup clean and flexible. It:
 
