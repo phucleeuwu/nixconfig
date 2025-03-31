@@ -4,15 +4,15 @@
   enableFishIntegration = true;
   enableNushellIntegration = true;
   shellWrapperName = "y";
-  initLua = ../../../yazi/init.lua;
+  initLua = ../../yazi/init.lua;
   plugins = {
-    compress = ../../../yazi/plugins/compress.yazi;
-    fg = ../../../yazi/plugins/fg.yazi;
-    full-border = ../../../yazi/plugins/full-border.yazi;
-    git = ../../../yazi/plugins/git.yazi;
-    searchjump = ../../../yazi/plugins/searchjump.yazi;
-    yatline-githead = ../../../yazi/plugins/yatline-githead.yazi;
-    yatline = ../../../yazi/plugins/yatline.yazi;
+    compress = ../../yazi/plugins/compress.yazi;
+    fg = ../../yazi/plugins/fg.yazi;
+    full-border = ../../yazi/plugins/full-border.yazi;
+    git = ../../yazi/plugins/git.yazi;
+    searchjump = ../../yazi/plugins/searchjump.yazi;
+    yatline-githead = ../../yazi/plugins/yatline-githead.yazi;
+    yatline = ../../yazi/plugins/yatline.yazi;
   };
 
   #yazi.toml
