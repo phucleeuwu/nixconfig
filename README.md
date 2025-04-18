@@ -1,4 +1,4 @@
-# 🚀 My Nix Configuration
+# Nix Configuration
 
 ## 📌 Overview
 
